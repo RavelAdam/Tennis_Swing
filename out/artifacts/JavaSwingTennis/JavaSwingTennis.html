@@ -1,0 +1,43 @@
+<html><head>
+  <SCRIPT src="http://java.com/js/dtjava.js"></SCRIPT>
+<script>
+    function launchApplication(jnlpfile) {
+        dtjava.launch(            {
+                url : 'JavaSwingTennis.jnlp'
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+        return false;
+    }
+</script>
+
+<script>
+    function javafxEmbedJavaSwingTennis_id() {
+        dtjava.embed(
+            {
+                id : 'JavaSwingTennis_id',
+                url : 'JavaSwingTennis.jnlp',
+                placeholder : 'javafx-app-placeholder',
+                width : '600',
+                height : '400'
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+    }
+    <!-- Embed FX application into web page once page is loaded -->
+    dtjava.addOnloadCallback(javafxEmbedJavaSwingTennis_id);
+</script>
+
+</head><body>
+<h2>Test page for <b>JavaSwingTennis</b></h2>
+  <b>Webstart:</b> <a href='JavaSwingTennis.jnlp' onclick="return launchApplication('JavaSwingTennis.jnlp');">click to launch this app as webstart</a><br><hr><br>
+
+  <!-- Applet will be inserted here -->
+  <div id='javafx-app-placeholder'></div>
+</body></html>
